@@ -1,11 +1,14 @@
+using System.Text;
 using FluentValidation.AspNetCore;
 using MapsterMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace GBank.Account.Api
@@ -32,14 +35,26 @@ namespace GBank.Account.Api
             #endregion
 
             #region Auth
-            services.AddAuthentication("token")
-                .AddJwtBearer("token", options =>
+            var key = Encoding.ASCII.GetBytes("GBankAccountSecret");
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.Authority = Configuration.GetSection("IdentityAddress").Value;
+                x.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    options.Authority = "https://localhost:5001";
-                    options.TokenValidationParameters.ValidateAudience = false;
-
-                    options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
-                });
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             services.AddAuthorization(options =>
             {
@@ -100,7 +115,7 @@ namespace GBank.Account.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GBank.Account.Api v1"));
             }
             app.InitializeSampleData();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

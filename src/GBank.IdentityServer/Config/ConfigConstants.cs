@@ -9,6 +9,6 @@ public static class ConfigConstants
     public const string AccountApiWriteScope = "accountapi.write";
 
     //Transaction Scopes
-    public const string TransactionApiReadScope = "transaction.read";
-    public const string TransactionApiWriteScope = "transaction.write";
+    public const string TransactionApiReadScope = "transactionapi.read";
+    public const string TransactionApiWriteScope = "transactionapi.write";
 }

@@ -21,7 +21,6 @@ namespace GBank.Account.Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("https://localhost:5003/");
                 });
     }
 }

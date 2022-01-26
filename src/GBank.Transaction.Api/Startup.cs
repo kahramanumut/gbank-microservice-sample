@@ -1,13 +1,16 @@
 using System;
+using System.Text;
 using FluentValidation.AspNetCore;
 using IdentityModel.Client;
 using MapsterMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace GBank.Transaction.Api
@@ -53,14 +56,28 @@ namespace GBank.Transaction.Api
             #endregion
 
             #region Auth
-            services.AddAuthentication("token")
-                .AddJwtBearer("token", options =>
+            var key = Encoding.ASCII.GetBytes("GBankTransactionSecret");
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.Authority = Configuration.GetSection("IdentityAddress").Value;
+                x.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    options.Authority = Configuration.GetSection("IdentityAddress").Value;
-                    options.TokenValidationParameters.ValidateAudience = false;
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
-                    options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
-                });
+            Console.Write(Configuration.GetSection("IdentityAddress").Value);
 
             services.AddAuthorization(options =>
             {

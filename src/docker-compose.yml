@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+
+  identity:
+    build: GBank.IdentityServer/.
+    container_name: gbank-identity
+    ports:
+      - "5001:5001"
+
+  account:
+    build: GBank.Account.Api/.
+    container_name: gbank-account-api
+    ports:
+      - "5003:5003"
+
+  customer:
+    build: GBank.Customer.Api/.
+    container_name: gbank-customer-api
+    ports:
+      - "5002:5002"
+
+  transaction:
+    build: GBank.Transaction.Api/.
+    container_name: gbank-transaction-api
+    ports:
+      - "5004:5004"       
+  
+networks:
+  default:
+    name: my-pre-existing-network

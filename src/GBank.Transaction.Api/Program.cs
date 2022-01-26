@@ -28,7 +28,6 @@ namespace GBank.Transaction.Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("https://localhost:5004/");
                 });
     }
 }

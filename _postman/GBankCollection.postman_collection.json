@@ -43,8 +43,8 @@
 					]
 				},
 				"url": {
-					"raw": "https://localhost:5001/connect/token",
-					"protocol": "https",
+					"raw": "http://localhost:5001/connect/token",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -65,7 +65,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkFGODBCOTkzNDE0MDBEOTk5MEMzN0MzOTEwQkE4ODMzIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNjQzMTg4NTIwLCJpYXQiOjE2NDMxODg1MjAsImV4cCI6MTY0MzE5MjEyMCwiYXVkIjoiYWNjb3VudGFwaSIsInNjb3BlIjpbImFjY291bnRhcGkucmVhZCJdLCJjbGllbnRfaWQiOiJhY2NvdW50Q2xpZW50IiwianRpIjoiRTM5MzAyNkY2NzQyQTBBM0NCRDI5MDdFNTRGMDY2QkEifQ.l1Gn2xc5dj0Tj4qJn2wuaeQnjR5pshL0JAZ6GgxW93qXSwKwWZgDQxPoQufXbwF0XCTBRjIBsckkYuI0kw4DzfsGadJJ3QliwDIC0-cN8bwLbxvObLcwvog2fGeYEFA40OeMkhj6HyrZplvYHRu_MhKfdWm3DY1hV_6PL87MBlVQeiHbQQ143hq0tjh_3qQ-x3fKtUyi9F2YOZMjEnL_Z4dlAmW6HxckrRvRQfMdBRf9Zzli_0tu4b0RSO6qrr2UmvvWnsqywBhzj1OImrgAfhNOoyv60yUH2ob5jIAQDrNYdz-W_sbySzh9ZSIV-tuklrhoU-KZ45gLSIeu-89eTQ",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkZEMjkyNzEyNzE4ODZCQ0I2NkNFQ0QxOEE3MDREQkU2IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzgxMDksImlhdCI6MTY0MzIzODEwOSwiZXhwIjoxNjQzMjQxNzA5LCJhdWQiOiJhY2NvdW50YXBpIiwic2NvcGUiOlsiYWNjb3VudGFwaS5yZWFkIiwiYWNjb3VudGFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJhY2NvdW50Q2xpZW50IiwianRpIjoiODRFQUFDODYyNjZEMzJFMTQ2NTM3N0YwNDBCRTg1NjQifQ.hbKNifTdMIiG-eecN028J7Q64Lzmz1T_LoB7H4-B4UxucFd8r4eURh9cC2un58PZEK3cpoF1sjEHUipYRtAaPvDjMc4x3m60W1cwSn_ljCQ8HzHIDDoa2lXSI5f8AHYb4B3HzggifPnCaWh4q99JuZcHTK5B0cIxLty1nb0GrsqtEa7v-ZgJl20CF5s16CkX35E-TxAndNOGX5Fd6tQSs7zqLx_D84RK9iV7zCKtdlo9kmYPdjQd45Vb4ID5tx6CfTG8DYlTaRDO4F2RO9SxFvO6nerLUR8w34LMghM4k3PLfCEPoMYlBNHaE3cnJk_uLjQQIv6jZY8JkU2TutAOIA",
 							"type": "string"
 						}
 					]
@@ -73,8 +73,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5003/api/account/EEB4A2A3-E8AF-4A77-8FC8-029474804033",
-					"protocol": "https",
+					"raw": "http://localhost:5003/api/account/EEB4A2A3-E8AF-4A77-8FC8-029474804033",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -126,8 +126,8 @@
 					]
 				},
 				"url": {
-					"raw": "https://localhost:5001/connect/token",
-					"protocol": "https",
+					"raw": "http://localhost:5001/connect/token",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -178,8 +178,8 @@
 					]
 				},
 				"url": {
-					"raw": "https://localhost:5001/connect/token",
-					"protocol": "https",
+					"raw": "http://localhost:5001/connect/token",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -195,11 +195,21 @@
 		{
 			"name": "Customer - Get All Customers",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkZEMjkyNzEyNzE4ODZCQ0I2NkNFQ0QxOEE3MDREQkU2IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzgwMDcsImlhdCI6MTY0MzIzODAwNywiZXhwIjoxNjQzMjQxNjA3LCJhdWQiOiJjdXN0b21lcmFwaSIsInNjb3BlIjpbImN1c3RvbWVyYXBpLnJlYWQiLCJjdXN0b21lcmFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJjdXN0b21lckNsaWVudCIsImp0aSI6IkUxRjBFRDFBOTdDQjU1OTlGNDU4ODFDQzFDQzhGNDNBIn0.g_Zoug2IYRNENo4vBU-j9O_LxazBzrAiWzgpMRNstSeA7bKFQVTfaLFR0VBTrYVMVGhGVQAzXjCI7WlwZAY2_oqzureZhnsaaFkHy1dxaCYJzuXRIe3ErNnJQWwim5BWSXDMoVBiO9L9WtlcNvdgjB-6ENtt2B8URHDNQdnjVeC0OCiY7ijYhz7v36x0JlcLMdUnGdnEP-gFfYEmmXZSL7mP_yGx5mHR1uUd1YvPwosRojNMyVH32gC9MDtqCeF1WeDPVmq5_n-fPdu8SKlX09uhndRcpZtsuM6oQNfDTFOBjK03YiFS02fBiGF624NJab-2w9nJKJXrtpK2kwFk8Q",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5002/api/customer",
-					"protocol": "https",
+					"raw": "http://localhost:5002/api/customer",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -215,6 +225,16 @@
 		{
 			"name": "Customer - Add New Customer",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkZEMjkyNzEyNzE4ODZCQ0I2NkNFQ0QxOEE3MDREQkU2IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzgwMDcsImlhdCI6MTY0MzIzODAwNywiZXhwIjoxNjQzMjQxNjA3LCJhdWQiOiJjdXN0b21lcmFwaSIsInNjb3BlIjpbImN1c3RvbWVyYXBpLnJlYWQiLCJjdXN0b21lcmFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJjdXN0b21lckNsaWVudCIsImp0aSI6IkUxRjBFRDFBOTdDQjU1OTlGNDU4ODFDQzFDQzhGNDNBIn0.g_Zoug2IYRNENo4vBU-j9O_LxazBzrAiWzgpMRNstSeA7bKFQVTfaLFR0VBTrYVMVGhGVQAzXjCI7WlwZAY2_oqzureZhnsaaFkHy1dxaCYJzuXRIe3ErNnJQWwim5BWSXDMoVBiO9L9WtlcNvdgjB-6ENtt2B8URHDNQdnjVeC0OCiY7ijYhz7v36x0JlcLMdUnGdnEP-gFfYEmmXZSL7mP_yGx5mHR1uUd1YvPwosRojNMyVH32gC9MDtqCeF1WeDPVmq5_n-fPdu8SKlX09uhndRcpZtsuM6oQNfDTFOBjK03YiFS02fBiGF624NJab-2w9nJKJXrtpK2kwFk8Q",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -232,8 +252,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5002/api/Customer",
-					"protocol": "https",
+					"raw": "http://localhost:5002/api/Customer",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -252,8 +272,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5002/api/Customer/:id",
-					"protocol": "https",
+					"raw": "http://localhost:5002/api/Customer/:id",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -294,8 +314,8 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5003/api/Account",
-					"protocol": "https",
+					"raw": "http://localhost:5003/api/Account",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -314,8 +334,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5003/api/Account/customer/:id",
-					"protocol": "https",
+					"raw": "http://localhost:5003/api/Account/customer/:id",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -357,12 +377,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5003/api/Transaction",
-					"protocol": "https",
+					"raw": "http://localhost:5004/api/Transaction",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5003",
+					"port": "5004",
 					"path": [
 						"api",
 						"Transaction"
@@ -374,39 +394,40 @@
 		{
 			"name": "Transaction - Get Transaction By Filter",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRGNzBEQzgzRjUwRjA0MTk0RUZEMjUyNzFCRTNCQzM4IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzk3OTEsImlhdCI6MTY0MzIzOTc5MSwiZXhwIjoxNjQzMjQzMzkxLCJhdWQiOiJ0cmFuc2FjdGlvbmFwaSIsInNjb3BlIjpbInRyYW5zYWN0aW9uYXBpLnJlYWQiLCJ0cmFuc2FjdGlvbmFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJ0cmFuc2FjdGlvbkNsaWVudCIsImp0aSI6Ijg3MDFGNjMyOTE5RUY4MjhFNTMwMUQ2MTE3RjJBMUMwIn0.jyxLAgKPjhck31dKl_bkNlddiW0nrBTspb57UlvjvQRVIxDEJZUyhHQI4irBB4CkgMSh7WBEn25XsQYBfT8Es4Wo45KqpFgb0VSr0ZaoM9Of_A3Ra4emzQDljMGk5y34isU-spJirPLBPPN1dpd-BtOFlXOUisGNnM2dnfLbYazSLHwVo57lOzEmdt-NB0-4bbNfGL510LC2vS_2OopiFPp9vtEoCSZ6XYGxn1Ma8ySJ46LBrfkHDLhqdzo3z4-3hLRj_GrR6uOS-T6AAbKMiQxZL4yxesslKSSrpYB0D0CA9fPpZRL-qiILCPP_qwhPQgvVgCbJ21wLK_ovS23j8w",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:5003/api/Transaction/:id?Limit=81258811&StartDate=1956-01-14T11:50:40.586Z&FinishDate=1956-01-14T11:50:40.586Z",
-					"protocol": "https",
+					"raw": "http://localhost:5004/api/Transaction/72C48C1D-BDB0-41DB-8575-68321A1A3CA9",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "5003",
+					"port": "5004",
 					"path": [
 						"api",
 						"Transaction",
-						":id"
+						"72C48C1D-BDB0-41DB-8575-68321A1A3CA9"
 					],
 					"query": [
 						{
-							"key": "Limit",
-							"value": "81258811"
-						},
-						{
 							"key": "StartDate",
-							"value": "1956-01-14T11:50:40.586Z"
+							"value": "1956-01-14T11:50:40.586Z",
+							"disabled": true
 						},
 						{
 							"key": "FinishDate",
-							"value": "1956-01-14T11:50:40.586Z"
-						}
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "se",
-							"description": "(Required) "
+							"value": "2956-01-14T11:50:40.586Z",
+							"disabled": true
 						}
 					]
 				}

@@ -7,7 +7,7 @@ namespace GBank.Transaction.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class TransactionController : ControllerBase
     {
         private readonly ITransactionService _transactionService;
@@ -22,7 +22,7 @@ namespace GBank.Transaction.Api.Controllers
         /// <param name="id">Account Id</param>
         /// <param name="filter">Default limit is 10</param>
         /// <returns></returns>
-        //[Authorize(AuthConstants.RoleUser)]
+        [Authorize(AuthConstants.RoleUser)]
         [HttpGet("{id}")]
         public IActionResult GetById(string id, [FromQuery]Filter filter)
         {
@@ -38,7 +38,7 @@ namespace GBank.Transaction.Api.Controllers
         /// </summary>
         /// <param name="newTransaction"></param>
         /// <returns></returns>
-        //[Authorize(AuthConstants.RoleAdmin)]
+        [Authorize(AuthConstants.RoleAdmin)]
         [HttpPost]
         public async Task<IActionResult> AddTransaction([FromBody] AddTransactionDto newTransaction)
         {
