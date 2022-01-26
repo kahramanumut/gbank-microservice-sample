@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "68b7a188-b34a-408e-b663-11e0ed3b8548",
+		"name": "GBankCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Identity - Customer API Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "customerClient",
+							"type": "string"
+						},
+						{
+							"key": "client_secret",
+							"value": "GBankCustomerSecret",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "customerapi.read",
+							"type": "string",
+							"disabled": true
+						},
+						{
+							"key": "scope[1]",
+							"value": "customerapi.write",
+							"type": "string",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account API - Get Account By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkFGODBCOTkzNDE0MDBEOTk5MEMzN0MzOTEwQkE4ODMzIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwibmJmIjoxNjQzMTg4NTIwLCJpYXQiOjE2NDMxODg1MjAsImV4cCI6MTY0MzE5MjEyMCwiYXVkIjoiYWNjb3VudGFwaSIsInNjb3BlIjpbImFjY291bnRhcGkucmVhZCJdLCJjbGllbnRfaWQiOiJhY2NvdW50Q2xpZW50IiwianRpIjoiRTM5MzAyNkY2NzQyQTBBM0NCRDI5MDdFNTRGMDY2QkEifQ.l1Gn2xc5dj0Tj4qJn2wuaeQnjR5pshL0JAZ6GgxW93qXSwKwWZgDQxPoQufXbwF0XCTBRjIBsckkYuI0kw4DzfsGadJJ3QliwDIC0-cN8bwLbxvObLcwvog2fGeYEFA40OeMkhj6HyrZplvYHRu_MhKfdWm3DY1hV_6PL87MBlVQeiHbQQ143hq0tjh_3qQ-x3fKtUyi9F2YOZMjEnL_Z4dlAmW6HxckrRvRQfMdBRf9Zzli_0tu4b0RSO6qrr2UmvvWnsqywBhzj1OImrgAfhNOoyv60yUH2ob5jIAQDrNYdz-W_sbySzh9ZSIV-tuklrhoU-KZ45gLSIeu-89eTQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5003/api/account/EEB4A2A3-E8AF-4A77-8FC8-029474804033",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"account",
+						"EEB4A2A3-E8AF-4A77-8FC8-029474804033"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identity - Account API Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "accountClient",
+							"type": "string"
+						},
+						{
+							"key": "client_secret",
+							"value": "GBankAccountSecret",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "accountapi.read",
+							"type": "string",
+							"disabled": true
+						},
+						{
+							"key": "scope[1]",
+							"value": "accountapi.write",
+							"type": "string",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identity - Transaction API Access Token Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "transactionClient",
+							"type": "string"
+						},
+						{
+							"key": "client_secret",
+							"value": "GBankTransactionSecret",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "transactionapi.read",
+							"type": "string",
+							"disabled": true
+						},
+						{
+							"key": "scope[1]",
+							"value": "transactionapi.write",
+							"type": "string",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer - Get All Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5002/api/customer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer - Add New Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dolor ullamco velit\",\n    \"surname\": \"laboris\",\n    \"age\": 2782815\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5002/api/Customer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"Customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer - Get Customer By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5002/api/Customer/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"Customer",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "voluptate veniam",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account - Add New Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"velit proident exercitation\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5003/api/Account",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"Account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account - Get Account By Customer Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5003/api/Account/customer/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"Account",
+						"customer",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "fugiat dolore Duis pariatur",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction - Add New Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": -94955027.33604306,\n    \"accountId\": \"deserunt pariatur ullamco dolor sed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5003/api/Transaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"Transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction - Get Transaction By Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5003/api/Transaction/:id?Limit=81258811&StartDate=1956-01-14T11:50:40.586Z&FinishDate=1956-01-14T11:50:40.586Z",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"Transaction",
+						":id"
+					],
+					"query": [
+						{
+							"key": "Limit",
+							"value": "81258811"
+						},
+						{
+							"key": "StartDate",
+							"value": "1956-01-14T11:50:40.586Z"
+						},
+						{
+							"key": "FinishDate",
+							"value": "1956-01-14T11:50:40.586Z"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "se",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
