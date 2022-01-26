@@ -9,12 +9,14 @@ public class CustomerService : ICustomerService
     private readonly CustomerDbContext _dbContext;
     private readonly IMapper _mapper;
     private readonly AccountClient _accountClient;
+    private readonly AccountMessageSender _accountMessageSender;
 
-    public CustomerService(CustomerDbContext dbContext, IMapper mapper, AccountClient accountClient)
+    public CustomerService(CustomerDbContext dbContext, IMapper mapper, AccountClient accountClient, AccountMessageSender accountMessageSender)
     {
         _dbContext = dbContext;
         _mapper = mapper;
         _accountClient = accountClient;
+        _accountMessageSender = accountMessageSender;
     }
 
     public Result<List<CustomerDto>> GetAllCustomers()
@@ -37,7 +39,7 @@ public class CustomerService : ICustomerService
         return new Result<CustomerDto>(data, true, "Customer information has got successfully");
     }
 
-    public async Task<Result> AddNewCustomer(AddCustomerDto newCustomer)
+    public Result AddNewCustomer(AddCustomerDto newCustomer)
     {
         Customer customer = _mapper.Map<AddCustomerDto, Customer>(newCustomer);
 
@@ -46,12 +48,11 @@ public class CustomerService : ICustomerService
         _dbContext.Customers.Add(customer);
         _dbContext.SaveChanges();
 
-        Result accountCreated = await _accountClient.AddNewAccount(customer.Id);
-        if (accountCreated.IsSuccess)
-            return new Result(true, "New customer and account added");
+        //Before designed by HttpClient, but after changed with Message Queue
+        //Result accountCreated = await _accountClient.AddNewAccount(customer.Id);
 
-        _dbContext.Customers.Remove(customer);
-        return new Result(false, "New customer could not added");
+        _accountMessageSender.SendAccount(customer.Id);
+        return new Result(true, "New customer and account added");
 
     }
 

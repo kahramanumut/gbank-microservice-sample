@@ -23,7 +23,9 @@ namespace GBank.Account.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AccountDbContext>(options => options.UseInMemoryDatabase(databaseName: "AccountDb"));
-
+            var serviceClientSettingsConfig = Configuration.GetSection("RabbitMq");
+            services.Configure<RabbitMqConfiguration>(serviceClientSettingsConfig);
+            
             #region DI Registration
             services.AddSingleton<IMapper, Mapper>();
             services.AddScoped<IAccountService, AccountService>();
@@ -84,6 +86,8 @@ namespace GBank.Account.Api
                     }  
                 }); 
             });
+
+            services.AddHostedService<AccountMessageReceiver>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

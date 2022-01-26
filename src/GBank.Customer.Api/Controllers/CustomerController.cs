@@ -49,9 +49,9 @@ namespace GBank.Customer.Api.Controllers
         /// <returns></returns>
         [Authorize(AuthConstants.RoleAdmin)]
         [HttpPost]
-        public async Task<IActionResult> AddNewCustomer(AddCustomerDto newCustomer)
+        public IActionResult AddNewCustomer(AddCustomerDto newCustomer)
         {
-            Result result = await _customerService.AddNewCustomer(newCustomer);
+            Result result =  _customerService.AddNewCustomer(newCustomer);
             if(result.IsSuccess)
                 return Ok(result);
 

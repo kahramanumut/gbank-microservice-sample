@@ -25,6 +25,8 @@ namespace GBank.Customer.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CustomerDbContext>(options => options.UseInMemoryDatabase(databaseName: "CustomerDb"));
+            var serviceClientSettingsConfig = Configuration.GetSection("RabbitMq");
+            services.Configure<RabbitMqConfiguration>(serviceClientSettingsConfig);
 
             #region Http Services
             services.AddAccessTokenManagement(options =>
@@ -50,6 +52,7 @@ namespace GBank.Customer.Api
             #region DI Registration
             services.AddSingleton<IMapper, Mapper>();
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddSingleton<AccountMessageSender>();
             #endregion
 
             #region Auth
