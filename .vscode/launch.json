@@ -1,0 +1,96 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Account Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskAccountApiBuild",
+            "program": "${workspaceFolder}/src/GBank.Account.Api/bin/Debug/net5.0/GBank.Account.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/GBank.Account.Api",
+            "stopAtEntry": false,
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            // },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Customer Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskCustomerApiBuild",
+            "program": "${workspaceFolder}/src/GBank.Customer.Api/bin/Debug/net5.0/GBank.Customer.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/GBank.Customer.Api",
+            "stopAtEntry": false,
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            // },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Transaction Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskTransactionApiBuild",
+            "program": "${workspaceFolder}/src/GBank.Transaction.Api/bin/Debug/net5.0/GBank.Transaction.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/GBank.Transaction.Api",
+            "stopAtEntry": false,
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            // },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Identity Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "taskIdentityBuild",
+            "program": "${workspaceFolder}/src/GBank.IdentityServer/bin/Debug/net5.0/GBank.IdentityServer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/GBank.IdentityServer",
+            "stopAtEntry": false,
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            // },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },    
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All of API",
+            "configurations": ["Account Api","Customer Api", "Transaction Api", "Identity Api"]
+        }
+    ],
+}
