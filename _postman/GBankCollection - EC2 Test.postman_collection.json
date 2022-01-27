@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "f3a21302-1a5a-44e2-b645-3c0ae65496db",
+		"name": "GBankCollection - EC2 Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Identity - Customer API Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "customerClient",
+							"type": "string"
+						},
+						{
+							"key": "client_secret",
+							"value": "GBankCustomerSecret",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "customerapi.read",
+							"type": "string",
+							"disabled": true
+						},
+						{
+							"key": "scope[1]",
+							"value": "customerapi.write",
+							"type": "string",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://3.71.115.206:5001/connect/token",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account API - Get Account By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkZEMjkyNzEyNzE4ODZCQ0I2NkNFQ0QxOEE3MDREQkU2IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzgxMDksImlhdCI6MTY0MzIzODEwOSwiZXhwIjoxNjQzMjQxNzA5LCJhdWQiOiJhY2NvdW50YXBpIiwic2NvcGUiOlsiYWNjb3VudGFwaS5yZWFkIiwiYWNjb3VudGFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJhY2NvdW50Q2xpZW50IiwianRpIjoiODRFQUFDODYyNjZEMzJFMTQ2NTM3N0YwNDBCRTg1NjQifQ.hbKNifTdMIiG-eecN028J7Q64Lzmz1T_LoB7H4-B4UxucFd8r4eURh9cC2un58PZEK3cpoF1sjEHUipYRtAaPvDjMc4x3m60W1cwSn_ljCQ8HzHIDDoa2lXSI5f8AHYb4B3HzggifPnCaWh4q99JuZcHTK5B0cIxLty1nb0GrsqtEa7v-ZgJl20CF5s16CkX35E-TxAndNOGX5Fd6tQSs7zqLx_D84RK9iV7zCKtdlo9kmYPdjQd45Vb4ID5tx6CfTG8DYlTaRDO4F2RO9SxFvO6nerLUR8w34LMghM4k3PLfCEPoMYlBNHaE3cnJk_uLjQQIv6jZY8JkU2TutAOIA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.71.115.206:5003/api/account/EEB4A2A3-E8AF-4A77-8FC8-029474804033",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"account",
+						"EEB4A2A3-E8AF-4A77-8FC8-029474804033"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identity - Account API Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "accountClient",
+							"type": "string"
+						},
+						{
+							"key": "client_secret",
+							"value": "GBankAccountSecret",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "accountapi.read",
+							"type": "string",
+							"disabled": true
+						},
+						{
+							"key": "scope[1]",
+							"value": "accountapi.write",
+							"type": "string",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://3.71.115.206:5001/connect/token",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identity - Transaction API Access Token Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "transactionClient",
+							"type": "string"
+						},
+						{
+							"key": "client_secret",
+							"value": "GBankTransactionSecret",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "transactionapi.read",
+							"type": "string",
+							"disabled": true
+						},
+						{
+							"key": "scope[1]",
+							"value": "transactionapi.write",
+							"type": "string",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://3.71.115.206:5001/connect/token",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer - Get All Customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkIxNTYzQ0ZCQTY4RENDOUY3Q0IxRDMwQTQxQzY0NERDIiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vMy43MS4xMTUuMjA2OjUwMDEiLCJuYmYiOjE2NDMzMjEzNDksImlhdCI6MTY0MzMyMTM0OSwiZXhwIjoxNjQzMzI0OTQ5LCJhdWQiOiJjdXN0b21lcmFwaSIsInNjb3BlIjpbImN1c3RvbWVyYXBpLnJlYWQiLCJjdXN0b21lcmFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJjdXN0b21lckNsaWVudCIsImp0aSI6IjQ3RkFFQzg2OENFRUQ1MTJDQkQ1MEU1QjhENTQ4QjBBIn0.cAp0DFEmT2W64xXkqcAEXtNsP36VqfhQ40YuXWJuhbbA5zhmH4NtCnPYMU4c8x7HNx2kLinRnHZS8GXICwoxmmbx6aNbTv9KHFdiTzDlr0VSEEtwuHT7I6k5zeSR7EKODG6a3EAA714gBCUcLY4ZGvxGFbodI3QJr4vUXgsOuriN05jALKo2U_8SsD6RHS2f6y4x-G4JDFOCzrLMjrHYNQHSPpTmgBdrDx2-bzp6xEHtEUgrQo5dkGR_EVozmNniMdKXf3aColHfTCnngteC5-LJgZShJo5TPlS3Ubp5i8k61_8XXwkESYgcGL7Bjb3waLHKn7FIVw-yM0Cl5etRFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.71.115.206:5002/api/customer",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer - Add New Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkZEMjkyNzEyNzE4ODZCQ0I2NkNFQ0QxOEE3MDREQkU2IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzgwMDcsImlhdCI6MTY0MzIzODAwNywiZXhwIjoxNjQzMjQxNjA3LCJhdWQiOiJjdXN0b21lcmFwaSIsInNjb3BlIjpbImN1c3RvbWVyYXBpLnJlYWQiLCJjdXN0b21lcmFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJjdXN0b21lckNsaWVudCIsImp0aSI6IkUxRjBFRDFBOTdDQjU1OTlGNDU4ODFDQzFDQzhGNDNBIn0.g_Zoug2IYRNENo4vBU-j9O_LxazBzrAiWzgpMRNstSeA7bKFQVTfaLFR0VBTrYVMVGhGVQAzXjCI7WlwZAY2_oqzureZhnsaaFkHy1dxaCYJzuXRIe3ErNnJQWwim5BWSXDMoVBiO9L9WtlcNvdgjB-6ENtt2B8URHDNQdnjVeC0OCiY7ijYhz7v36x0JlcLMdUnGdnEP-gFfYEmmXZSL7mP_yGx5mHR1uUd1YvPwosRojNMyVH32gC9MDtqCeF1WeDPVmq5_n-fPdu8SKlX09uhndRcpZtsuM6oQNfDTFOBjK03YiFS02fBiGF624NJab-2w9nJKJXrtpK2kwFk8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dolor ullamco velit\",\n    \"surname\": \"laboris\",\n    \"age\": 2782815\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.71.115.206:5002/api/Customer",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"Customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer - Get Customer By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.71.115.206:5002/api/Customer/:id",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"Customer",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "voluptate veniam",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account - Add New Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"velit proident exercitation\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.71.115.206:5003/api/Account",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"Account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account - Get Account By Customer Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.71.115.206:5003/api/Account/customer/:id",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"Account",
+						"customer",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "fugiat dolore Duis pariatur",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction - Add New Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": -94955027.33604306,\n    \"accountId\": \"deserunt pariatur ullamco dolor sed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.71.115.206:5004/api/Transaction",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction - Get Transaction By Filter",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRGNzBEQzgzRjUwRjA0MTk0RUZEMjUyNzFCRTNCQzM4IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMDEiLCJuYmYiOjE2NDMyMzk3OTEsImlhdCI6MTY0MzIzOTc5MSwiZXhwIjoxNjQzMjQzMzkxLCJhdWQiOiJ0cmFuc2FjdGlvbmFwaSIsInNjb3BlIjpbInRyYW5zYWN0aW9uYXBpLnJlYWQiLCJ0cmFuc2FjdGlvbmFwaS53cml0ZSJdLCJjbGllbnRfaWQiOiJ0cmFuc2FjdGlvbkNsaWVudCIsImp0aSI6Ijg3MDFGNjMyOTE5RUY4MjhFNTMwMUQ2MTE3RjJBMUMwIn0.jyxLAgKPjhck31dKl_bkNlddiW0nrBTspb57UlvjvQRVIxDEJZUyhHQI4irBB4CkgMSh7WBEn25XsQYBfT8Es4Wo45KqpFgb0VSr0ZaoM9Of_A3Ra4emzQDljMGk5y34isU-spJirPLBPPN1dpd-BtOFlXOUisGNnM2dnfLbYazSLHwVo57lOzEmdt-NB0-4bbNfGL510LC2vS_2OopiFPp9vtEoCSZ6XYGxn1Ma8ySJ46LBrfkHDLhqdzo3z4-3hLRj_GrR6uOS-T6AAbKMiQxZL4yxesslKSSrpYB0D0CA9fPpZRL-qiILCPP_qwhPQgvVgCbJ21wLK_ovS23j8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://3.71.115.206:5004/api/Transaction/72C48C1D-BDB0-41DB-8575-68321A1A3CA9",
+					"protocol": "http",
+					"host": [
+						"3",
+						"71",
+						"115",
+						"206"
+					],
+					"port": "5004",
+					"path": [
+						"api",
+						"Transaction",
+						"72C48C1D-BDB0-41DB-8575-68321A1A3CA9"
+					],
+					"query": [
+						{
+							"key": "StartDate",
+							"value": "1956-01-14T11:50:40.586Z",
+							"disabled": true
+						},
+						{
+							"key": "FinishDate",
+							"value": "2956-01-14T11:50:40.586Z",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
